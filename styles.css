@@ -2,8 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #FFFFFF;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
 
 header {
     display: flex;
@@ -23,11 +29,19 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #FFFFFF;
     font-family: "Quicksand", sans-serif;
     font-size: 20px;
     height: 44px;
     line-height: 2;
+    transition: color 0.2s;
+    
+    &.active {
+        color: #00FFA6;
+    }
+    
+    &:hover {
+        color: #00FFA6;
+    }
 }
 
 nav a.right-border {
@@ -35,11 +49,90 @@ nav a.right-border {
     padding-right: 2rem;
 }
 
+main.container {
+
+}
+
 section {
     height: 100vh;
+    scroll-snap-align: center;
 }
+
 section.home {
     background-color: #000A23;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .presentation {
+        width: 38.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    h2 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 54px;
+        
+        span.my-name {
+            color: #00FFA6;
+        }
+    }
+    
+    h3.role {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-style: italic;
+        color: #B7FFE6;
+        font-size: 30px;
+        align-self: flex-end;
+        margin-top: -6px;
+        margin-bottom: 2.8rem;
+    }
+    
+    p {
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px;
+        width: 55%;
+        text-align: center;
+        margin-bottom: 2.8rem;
+    }
+    
+    a.btn-primary {
+        text-decoration: none;
+        font-family: "Quicksand", sans-serif;
+        color: #000A23;
+        background-color: #00FFA6;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 25px;
+        transition: background-color 0.2s;
+        
+        &:hover {
+            background-color: #0CD88A;
+        }
+    }
+}
+
+section.about {
+    background-color: #02152B;
+}
+
+section.skills {
+    background-color: #021D34;
+}
+
+section.projects {
+    background-color: #02253D;
+}
+
+section.contact {
+    background-color: #012E46   ;
 }
 
 img.ld-logo, .ld-logo {
