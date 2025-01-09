@@ -31,13 +31,13 @@ document.addEventListener("wheel", e => {
     e.preventDefault();
 }, {passive: false});
 
-contactBtn.addEventListener("click", e => {
+contactBtn.addEventListener("click", () => {
     currentSection = 4;
     links.forEach((value, key) => links[key].classList.remove("active"));
 });
 
 links.forEach((link, key) => {
-    link.addEventListener("click", e => {
+    link.addEventListener("click", () => {
         link.classList.add("active");
         const otherLinks= Array.from(links).filter(l => l !== link);
         otherLinks.forEach(l => l.classList.remove("active"));
